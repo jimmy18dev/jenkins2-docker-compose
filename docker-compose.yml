@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  jenkins-data:
+    container_name: jenkins-data
+    build: ./data
+  jenkins2:
+    container_name: jenkins2
+    build: ./master
+    depends_on:
+      - jenkins-data
+    volumes:
+      - jenkins-data
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 9000:8080
+      - 50000:50000
