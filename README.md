@@ -1,4 +1,5 @@
 # Jenkins 2 With Docker
+Jenkins for Continuous Integration (CI) and the other uses people have found for it as a task/batch file runner and cron substitute.
 <b>Learning</b> How to install/config the Continuous Integration Server with Jenkins on Docker 
 
 * Jenkins master 
@@ -26,6 +27,8 @@ docker run -p 8080:8080 -p 50000:50000 --name=jenkins2 --volumes-from=jenkins-da
 ```
 docker run -p 8080:8080 -p 50000:50000 -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker --name=jenkins2 --volumes-from=jenkins-data -d jenkins2
 ```
+
+Port 8080 exposes the web interface and port 50000 gives you access to a remote Java (JIRA) API.
 
 ## Get Jenkins First Password:
 ```
