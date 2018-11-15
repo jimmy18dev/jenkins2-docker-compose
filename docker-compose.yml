@@ -5,6 +5,7 @@ services:
     build: ./data
   jenkins2:
     container_name: jenkins2
+    restart: always
     build: ./master
     depends_on:
       - jenkins-data

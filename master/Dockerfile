@@ -4,6 +4,12 @@ USER root
 # Install some useful packages
 RUN apt-get update && apt-get --no-install-recommends --no-install-suggests --yes --quiet install apt-transport-https bash-completion ca-certificates curl git gnupg imagemagick less gnupg2 software-properties-common make mysql-client perceptualdiff procps ssh-client sudo vim wget && apt-get clean && apt-get --yes --quiet autoremove --purge
 
+# Install Docker CE
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+RUN apt-get update && apt-get install docker-ce -y
+RUN docker --version
+
 # cleaning
 RUN rm -rf  /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/* /usr/share/groff/* /usr/share/info/* /usr/share/linda/* /usr/share/lintian/* /usr/share/locale/* /usr/share/man/*
 
