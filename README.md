@@ -1,6 +1,5 @@
 # Jenkins 2 With Docker
-Jenkins for Continuous Integration (CI) and the other uses people have found for it as a task/batch file runner and cron substitute.
-<b>Learning</b> How to install/config the Continuous Integration Server with Jenkins on Docker 
+Jenkins for Continuous Integration (CI) and the other uses people have found for it as a task/batch file runner and cron substitute. Install and config the Continuous Integration Server with Jenkins on Docker
 
 * Jenkins master 
 * Jenkins data to keep all configuration such as plugins and jobs of Jenkins
