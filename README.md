@@ -19,12 +19,12 @@ docker build -t jenkins2 -f master/Dockerfile .
 ## Docker Run:
 ```
 docker run --name=jenkins-data jenkins-data
-docker run -p 8080:8080 -p 50000:50000 --name=jenkins2 --volumes-from=jenkins-data -d jenkins2
+docker run -p 9000:8080 -p 50000:50000 --name=jenkins2 --volumes-from=jenkins-data -d jenkins2
 ```
 
 ## Start Jenkins servers recursively with Docker:
 ```
-docker run -p 8080:8080 -p 50000:50000 -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker --name=jenkins2 --volumes-from=jenkins-data -d jenkins2
+docker run -p 9000:8080 -p 50000:50000 -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker --name=jenkins2 --volumes-from=jenkins-data -d jenkins2
 ```
 
 Port 8080 exposes the web interface and port 50000 gives you access to a remote Java (JIRA) API.
