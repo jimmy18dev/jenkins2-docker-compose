@@ -1,4 +1,7 @@
 FROM jenkins/jenkins:lts
+
+LABEL maintainer="jimmy18dev@gmail.com"
+
 USER root
 
 # Install some useful packages
@@ -23,6 +26,7 @@ RUN chown -R jenkins:jenkins /var/log/jenkins
 RUN chown -R jenkins:jenkins /var/cache/jenkins
 
 ENV JAVA_OPTS="-Xmx8192m"
+ENV JENKINS_OPTS=" --handlerCountMax=300"
 
 # Add user jenkins to list of sudoers
 RUN usermod -a -G root jenkins
